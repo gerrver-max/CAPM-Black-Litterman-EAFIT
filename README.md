@@ -246,6 +246,10 @@ Contiene:
 
 Archivo Excel generado por el script con los principales resultados del modelo.
 
+### `requirements.txt`
+
+Archivo que contiene las versiones de las principales librerías necesarias para ejecutar el modelo.
+
 ### `.gitignore`
 
 Archivo utilizado para evitar subir archivos innecesarios al repositorio, incluyendo el entorno virtual `.venv`.
@@ -269,23 +273,53 @@ Las principales librerías utilizadas por el modelo son:
 - yfinance
 - openpyxl
 
+Las versiones utilizadas en el entorno de referencia se encuentran especificadas en:
+
+    requirements.txt
+
 ---
 
 # 14. Instalación
 
 Después de descargar o clonar el repositorio, abrir una terminal dentro de la carpeta del proyecto.
 
-Crear un entorno virtual:
+## 14.1 Crear un entorno virtual
+
+### macOS / Linux
 
     python3 -m venv .venv
 
-Activarlo en macOS/Linux:
+### Windows
+
+    py -m venv .venv
+
+---
+
+## 14.2 Activar el entorno virtual
+
+### macOS / Linux
 
     source .venv/bin/activate
 
-Instalar las librerías:
+### Windows — PowerShell
 
-    pip install pandas numpy matplotlib scipy yfinance openpyxl
+    .venv\Scripts\Activate.ps1
+
+### Windows — CMD
+
+    .venv\Scripts\activate.bat
+
+Una vez activado, la terminal mostrará normalmente `(.venv)` al comienzo de la línea.
+
+---
+
+## 14.3 Instalar las dependencias
+
+Con el entorno virtual activado:
+
+    pip install -r requirements.txt
+
+El archivo `requirements.txt` instala las versiones de las librerías utilizadas para desarrollar y probar el modelo.
 
 ---
 
